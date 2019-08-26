@@ -31,7 +31,7 @@ This theme is supposed to work with current supported Firefox releases:
 
 ### Installation script
 ```sh
-git clone https://gitlab.com/brombinmirko/firefox-breeze-theme/ && cd firefox-breeze-theme
+git clone https://github.com/brombinmirko/firefox-breeze-theme/ && cd firefox-breeze-theme
 ./scripts/install.sh
 ```
 
@@ -65,7 +65,7 @@ git clone https://gitlab.com/brombinmirko/firefox-breeze-theme/ && cd firefox-br
 5. Clone this repo to a subdirectory:
 
 	```sh
-	git clone https://gitlab.com/brombinmirko/firefox-breeze-theme.git
+	git clone https://github.com/brombinmirko/firefox-breeze-theme.git
 	```
 
 6. Create single-line user CSS files if non-existent or empty (at least one line is needed for `sed`):
