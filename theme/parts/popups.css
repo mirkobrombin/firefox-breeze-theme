@@ -11,7 +11,7 @@ menupopup {
 	border-radius: 5px;
 	padding: 4px 0 !important;
 	color: var(--gnome-toolbar-color) !important;
-	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) !important;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.06) !important;
 }
 menupopup menupopup {
 	margin: -5px 0 0 -4px;
@@ -42,109 +42,81 @@ panel[type=arrow] {
 }
 
 /* Style popovers */
-.panel-arrowcontent .panel-arrowcontent, 
+.panel-arrowcontent .panel-arrowcontent,
 .panel-header, .PanelUI-subView,
 .panel-subview-body, #widget-overflow-mainView, #protections-popup-footer,
 panelview {
 	border: 0 !important;
 	background: transparent !important;
 }
-panel:not(.tooltip-xul-wrapper) .panel-arrowcontent {
+
+.panel-arrowcontent {
 	background: var(--gnome-popover-background) !important;
 	border: 1px solid !important;
 	border-color: var(--gnome-popover-border-color) !important;
-	border-radius: 3px;
-	box-shadow: var(--gnome-popover-shadow) !important;
-	padding: 0 !important;
+	border-radius: 9px;
+	/* box-shadow: var(--gnome-popover-shadow) !important; */
+	padding: 12px !important;
 	color: var(--gnome-toolbar-color) !important;
 }
-
-.panel-subview-body, .panel-view-body-unscrollable, .panel-header, .panel-footer {
-	padding: 10px !important;
-}
-#notification-popup .panel-arrowcontent,
-#appMenu-notification-popup .panel-arrowcontent,
-#identity-popup  .panel-arrowcontent,
-#protections-popup .panel-arrowcontent,
-#sidebarMenu-popup .panel-arrowcontent,
-#UITourTooltip .panel-arrowcontent {
-	padding: 10px !important;
-}
-#notification-popup .panel-footer,
-#appMenu-notification-popup .panel-footer,
-#identity-popup .panel-footer,
-#identity-popup .panel-header,
-#protections-popup .panel-footer,
-#protections-popup .panel-header {
-	padding: 0 !important;
-	margin: 0 !important;
+.panel-arrow {
+	fill: var(--gnome-popover-background) !important;
+	stroke: var(--gnome-popover-border-color) !important;
 }
 
 .PanelUI-subView toolbarseparator:not([orient="vertical"]) {
 	margin: 10px 2px !important;
 }
 
-.panel-arrow {    
-	fill: var(--gnome-popover-background) !important;
-	stroke: var(--gnome-popover-border-color) !important;
-}
-
 .panel-header {
-	margin-top: 10px !important;
+	padding: 0 0 10px 0 !important;
 }
-
 .panel-footer {
 	background-color: transparent !important;
 	display: flex;
 	justify-content: flex-end;
-	padding-top: 0 !important;
+	padding-top: 0px !important;
 }
-
 .panel-footer toolbarseparator {
 	display: none !important;
 }
 
-.panel-subview-footer {
-	margin: 0 10px 10px !important;
-}
-
-/* Use --arrowpanel-background for popover background when content is remote */
-panel:not(.tooltip-xul-wrapper)[type=arrow][remote] .panel-arrowcontent {
-	background: var(--arrowpanel-background) !important;
-	padding: 10px !important;
-}
-panel:not(.tooltip-xul-wrapper)[type=arrow][remote] .panel-arrow  {
-	fill: var(--arrowpanel-background) !important;
-}
-panel:not(.tooltip-xul-wrapper)[type=arrow][remote] .panel-header {
-	margin-top: 0 !important;
+.panel-subview-body {
 	padding: 0 !important;
+}
+.panel-subview-footer {
+	margin-top: 10px !important;
 }
 
 /* Style popovers menu buttons */
 .subviewbutton:not(.subviewbutton-back),
 .toolbarbutton-1, .protections-popup-category,
 .identity-popup-content-blocking-category {
-	border-radius: 3px !important;	
+	border-radius: 5px !important;
 	color: var(--gnome-toolbar-color) !important;
+	font: menu !important;
 }
 .subviewbutton:not(.subviewbutton-back),
 .protections-popup-category,
-.identity-popup-content-blocking-category {	
+.identity-popup-content-blocking-category {
 	padding: 5px !important;
 }
 
-.subviewbutton[disabled], .toolbarbutton-1[disabled] {
+.subviewbutton[disabled], .toolbarbutton-1[disabled],
+.protections-popup-category[disabled],
+.identity-popup-content-blocking-category[disabled] {
 	opacity: 0.5 !important;
+	color: var(--gnome-inactive-toolbar-color) !important;
+	background: none !important;
 }
 
 .subviewbutton[shortcut]:after {
 	opacity: 0.5 !important;
 }
 
-.subviewbutton:not([disabled]):hover, .toolbarbutton-1:not([disabled]):hover, .protections-popup-category:hover,
-.identity-popup-content-blocking-category:hover {
-	background-color: var(--gnome-popover-button-hover-background) !important;
+.subviewbutton:not([disabled]):hover, .toolbarbutton-1:not([disabled]):hover, .protections-popup-category:not([disabled]):hover,
+.identity-popup-content-blocking-category:not([disabled]):hover {
+	background: var(--gnome-popover-button-hover-background) !important;
 }
 
 /* Style popover separators */

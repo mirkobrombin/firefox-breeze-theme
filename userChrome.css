@@ -35,3 +35,8 @@
  * your configuration to that file if you don't like setting it up after every
  * update. You can also apply your own custom styles in that file. */
 @import "customChrome.css"; /**/
+
+/* Fix for missing Window Buttons on patched versions of Firefox that use the unity appmenu patch */
+ #toolbar-menubar[autohide="true"]:not([inactive]) + #TabsToolbar > .titlebar-buttonbox-container {
+     visibility: visible !important;
+ }
